@@ -4,6 +4,7 @@ import Features from "@/components/Features";
 import Categories from "@/components/Categories";
 import FeaturedProducts from "@/components/FeaturedProducts";
 import About from "@/components/About";
+import HappyCustomers from "@/components/HappyCustomers";
 import Locations from "@/components/Locations";
 import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer";
@@ -18,6 +19,7 @@ const Index = () => {
         <Categories />
         <FeaturedProducts />
         <About />
+        <HappyCustomers />
         <Locations />
         <Newsletter />
       </main>

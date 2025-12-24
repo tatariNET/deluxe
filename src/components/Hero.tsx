@@ -27,16 +27,17 @@ const Hero = () => {
             <span className="italic font-normal">Elegance</span>
           </h1>
           <p className="font-body text-lg md:text-xl text-background/85 max-w-lg mb-8 font-light animate-fade-in-delay-2">
-            Transform your space with our exquisite collection of handcrafted furniture, 
-            designed for those who appreciate refined luxury.
+            Transform your space with our exquisite collection of handcrafted
+            furniture, designed for those who appreciate refined luxury.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-delay-3">
-            <Button variant="luxury-outline" size="lg" className="border-background text-background hover:bg-background hover:text-foreground">
+            <Button
+              variant="luxury-outline"
+              size="lg"
+              className="border-background text-background hover:bg-background hover:text-foreground"
+            >
               Explore Collection
               <ArrowRight className="w-4 h-4 ml-2" />
-            </Button>
-            <Button variant="luxury-ghost" size="lg" className="text-background hover:text-background/80">
-              View Lookbook
             </Button>
           </div>
         </div>
@@ -44,9 +45,6 @@ const Hero = () => {
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2">
-        <span className="text-background/60 text-xs uppercase tracking-widest font-body">
-          Scroll
-        </span>
         <div className="w-px h-12 bg-background/30 relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-1/2 bg-background animate-pulse" />
         </div>

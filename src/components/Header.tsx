@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Menu, X, Phone, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -12,36 +12,18 @@ const navLinks = [
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled
-          ? "bg-background/95 backdrop-blur-md shadow-soft py-3"
-          : "bg-transparent py-5"
-      }`}
-    >
+    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-white shadow-soft py-4">
       <div className="luxury-container">
         <nav className="flex items-center justify-between">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2">
-            <div className="flex flex-col items-start">
-              <span className="font-heading text-2xl md:text-3xl font-semibold text-foreground tracking-tight">
-                Deluxe
-              </span>
-              <span className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground font-body">
-                Furniture
-              </span>
-            </div>
+            <img
+              src="/logo.png"
+              alt="Deluxe Furniture Logo"
+              className="h-12 md:h-14 w-auto object-contain"
+            />
           </a>
 
           {/* Desktop Navigation */}
