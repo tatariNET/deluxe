@@ -1,8 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import heroImage from "@/assets/hero-living-room.jpg";
+import { useLanguage } from "@/lib/language";
 
 const About = () => {
+  const { language } = useLanguage();
+  const isEn = language === "en";
+
   return (
     <section id="about" className="py-20 md:py-28 bg-background overflow-hidden">
       <div className="luxury-container">
@@ -22,24 +26,26 @@ const About = () => {
 
           {/* Content */}
           <div className="lg:pl-8">
-            <p className="luxury-subheading mb-4">Our Story</p>
+            <p className="luxury-subheading mb-4">
+              {isEn ? "Our Story" : "ስለ እኛ"}
+            </p>
             <h2 className="luxury-heading text-3xl md:text-4xl lg:text-5xl mb-6">
-              Crafting Luxury
+              {isEn ? "Crafting Luxury" : "የጥራት ስክርናት ፍጠር"}
               <br />
-              <span className="italic font-normal">Since 2018</span>
+              <span className="italic font-normal">
+                {isEn ? "Since 2018" : "ከ 2018 ጀምሮ"}
+              </span>
             </h2>
             <div className="space-y-4 mb-8">
               <p className="font-body text-muted-foreground leading-relaxed">
-                Deluxe Furniture has been Ethiopia's premier destination for luxury 
-                home and office furnishings. We curate the finest pieces from around 
-                the world, bringing European elegance and modern design to discerning 
-                customers across the nation.
+                {isEn
+                  ? "Deluxe Furniture has been Ethiopia's premier destination for luxury home and office furnishings. We curate the finest pieces from around the world, bringing European elegance and modern design to discerning customers across the nation."
+                  : "ዴለክስ ፈርኒቸር በኢትዮጵያ ውስጥ ለውብ የቤት እና የቢሮ ስክርናቶች ዋና መድረሻ ቆይታ ነች። ከዓለም አቀፍ ገበያ የተመረጡ የእውቂያ ክፍሎችን በመምረጥ የአውሮፓ ውበትና ዘመናዊ ዲዛይን ለደንበኞቻችን እናመጣለን።"}
               </p>
               <p className="font-body text-muted-foreground leading-relaxed">
-                Our commitment to quality, craftsmanship, and customer satisfaction 
-                has established us as a trusted name in premium furniture. Each piece 
-                in our collection is carefully selected to meet the highest standards 
-                of design and durability.
+                {isEn
+                  ? "Our commitment to quality, craftsmanship, and customer satisfaction has established us as a trusted name in premium furniture. Each piece in our collection is carefully selected to meet the highest standards of design and durability."
+                  : "በጥራት፣ በብልህ ሥራ እና በደንበኛ ማረኛነት ያለን ቁርጠኝነት እንደ ታማኝ ስም አድርጎናል። በስብስባችን ውስጥ ያለ እያንዳንዱ መሣሪያ የተመረጠ ሲሆን የዲዛይን እና የጥንካሬ ከፍተኛ መደብ ይሟላል።"}
               </p>
             </div>
 
@@ -50,7 +56,7 @@ const About = () => {
                   6+
                 </p>
                 <p className="font-body text-sm text-muted-foreground mt-1">
-                  Years Experience
+                  {isEn ? "Years Experience" : "የሥራ እትም ዓመታት"}
                 </p>
               </div>
               <div>
@@ -58,7 +64,7 @@ const About = () => {
                   8
                 </p>
                 <p className="font-body text-sm text-muted-foreground mt-1">
-                  Showrooms
+                  {isEn ? "Showrooms" : "ሾውሩሙዎች"}
                 </p>
               </div>
               <div>
@@ -66,13 +72,13 @@ const About = () => {
                   10K+
                 </p>
                 <p className="font-body text-sm text-muted-foreground mt-1">
-                  Happy Clients
+                  {isEn ? "Happy Clients" : "ደስ የሚላቸው ደንበኞች"}
                 </p>
               </div>
             </div>
 
             <Button variant="luxury" size="lg">
-              Learn More
+              {isEn ? "Learn More" : "ተጨማሪ ይመልከቱ"}
               <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
           </div>

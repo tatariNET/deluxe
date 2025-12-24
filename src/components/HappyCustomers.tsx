@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useLanguage } from "@/lib/language";
 
 const logos = [
   "/happy-customers/712.jpg",
@@ -13,6 +14,8 @@ const logos = [
 
 const HappyCustomers: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const { language } = useLanguage();
+  const isEn = language === "en";
   const itemsPerPage = 4;
   const totalItems = logos.length;
   const totalSlides = Math.ceil(totalItems / itemsPerPage);
@@ -42,10 +45,10 @@ const HappyCustomers: React.FC = () => {
       <div className="luxury-container">
         <div className="mb-8 md:mb-12 text-center">
           <h2 className="luxury-heading text-2xl md:text-3xl">
-            Happy Customers
+            {isEn ? "Happy Customers" : "ደስ የሚላቸው ደንበኞች"}
           </h2>
           <p className="luxury-subheading mt-2">
-            Trusted by leading organizations
+            {isEn ? "Trusted by leading organizations" : "በታዋቂ ድርጅቶች የታመኑ"}
           </p>
         </div>
 
