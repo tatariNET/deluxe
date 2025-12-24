@@ -1,4 +1,5 @@
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { useLanguage } from "@/lib/language";
 
 const footerLinks = {
   products: [
@@ -23,6 +24,8 @@ const footerLinks = {
 };
 
 const Footer = () => {
+  const { language } = useLanguage();
+  const isEn = language === "en";
   return (
     <footer id="contact" className="bg-background border-t border-border">
       {/* Main Footer */}
@@ -39,8 +42,9 @@ const Footer = () => {
               </span>
             </a>
             <p className="font-body text-muted-foreground mb-8 max-w-sm leading-relaxed">
-              Premium furniture for discerning tastes. Crafting elegant pieces 
-              that transform houses into homes since 2018.
+              {isEn
+                ? "Premium furniture for discerning tastes. Crafting elegant pieces that transform houses into homes since 2018."
+                : "ለተለዩ ጣዕሞች የተሰሩ ከፍተኛ የቤት እና የቢሮ ስክርናቶች። ከ 2018 ጀምሮ ቤቶችን ወደ ቤት የሚቀይሩ ውብ እቃዎችን እንፈጥራለን።"}
             </p>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
@@ -77,7 +81,7 @@ const Footer = () => {
           {/* Products Links */}
           <div>
             <h4 className="font-heading text-base font-semibold text-foreground mb-6">
-              Products
+              {isEn ? "Products" : "ምርቶች"}
             </h4>
             <ul className="space-y-3">
               {footerLinks.products.map((link) => (
@@ -96,7 +100,7 @@ const Footer = () => {
           {/* Company Links */}
           <div>
             <h4 className="font-heading text-base font-semibold text-foreground mb-6">
-              Company
+              {isEn ? "Company" : "ኩባንያ"}
             </h4>
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
@@ -115,7 +119,7 @@ const Footer = () => {
           {/* Support Links */}
           <div>
             <h4 className="font-heading text-base font-semibold text-foreground mb-6">
-              Support
+              {isEn ? "Support" : "ድጋፍ"}
             </h4>
             <ul className="space-y-3">
               {footerLinks.support.map((link) => (
@@ -138,7 +142,9 @@ const Footer = () => {
         <div className="luxury-container py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="font-body text-sm text-muted-foreground">
-              © 2024 Deluxe Furniture. All rights reserved.
+              {isEn
+                ? "© 2024 Deluxe Furniture. All rights reserved."
+                : "© 2024 ዴለክስ ፈርኒቸር። ሁሉም መብቶች የተጠበቁ ናቸው።"}
             </p>
             <div className="flex items-center gap-6">
               <a

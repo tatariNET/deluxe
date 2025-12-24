@@ -72,6 +72,17 @@ const Locations = () => {
           ))}
         </div>
 
+        {/* Map Embed for main showroom (replace src with your exact location if desired) */}
+        <div className="mt-12 border border-border bg-background">
+          <iframe
+            title="Deluxe Furniture Main Showroom Map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.0!2d38.75!3d9.03!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0:0x0!2sDeluxe%20Furniture!5e0!3m2!1sen!2set!4v1700000000000"
+            className="w-full h-80 border-0"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </div>
+
         {/* Phone CTA */}
         <div className="text-center mt-12">
           <p className="font-body text-muted-foreground mb-2">

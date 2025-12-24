@@ -2,17 +2,22 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
+import { useLanguage } from "@/lib/language";
 
 const Newsletter = () => {
   const [email, setEmail] = useState("");
   const { toast } = useToast();
+  const { language } = useLanguage();
+  const isEn = language === "en";
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (email) {
       toast({
-        title: "Successfully subscribed!",
-        description: "Thank you for joining our newsletter.",
+        title: isEn ? "Successfully subscribed!" : "በተሳካ ሁኔታ ተመዝግበዋል!",
+        description: isEn
+          ? "Thank you for joining our newsletter."
+          : "ወደ ዜና ማስታወቂያችን ስለተቀላቀሉ እናመሰግናለን።",
       });
       setEmail("");
     }
@@ -23,13 +28,15 @@ const Newsletter = () => {
       <div className="luxury-container">
         <div className="max-w-2xl mx-auto text-center">
           <p className="luxury-subheading text-background/60 mb-4">
-            Stay Updated
+            {isEn ? "Stay Updated" : "በዘመኑ ይሁኑ"}
           </p>
           <h2 className="luxury-heading text-3xl md:text-4xl lg:text-5xl mb-6 text-background">
-            Subscribe to Our Newsletter
+            {isEn ? "Subscribe to Our Newsletter" : "ወደ ዜና ማስታወቂያችን ይመዝገቡ"}
           </h2>
           <p className="font-body text-background/70 mb-10 text-lg font-light">
-            Get the latest updates on new collections, exclusive offers, and interior design inspiration.
+            {isEn
+              ? "Get the latest updates on new collections, exclusive offers, and interior design inspiration."
+              : "ስለ አዳዲስ ስብስቦች፣ ልዩ ግብዣዎች እና የውስጥ ዲዛይን እሴቶች የቅርብ ዜና ያግኙ።"}
           </p>
           <form
             onSubmit={handleSubmit}
@@ -37,7 +44,7 @@ const Newsletter = () => {
           >
             <Input
               type="email"
-              placeholder="Enter your email"
+              placeholder={isEn ? "Enter your email" : "ኢሜል አድራሻዎን ያስገቡ"}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -49,7 +56,7 @@ const Newsletter = () => {
               size="lg"
               className="border-background text-background hover:bg-background hover:text-foreground whitespace-nowrap"
             >
-              Subscribe
+              {isEn ? "Subscribe" : "ይመዝገቡ"}
             </Button>
           </form>
         </div>
